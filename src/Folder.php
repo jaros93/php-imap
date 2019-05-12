@@ -331,7 +331,7 @@ class Folder {
      */
     protected function decodeName($name) {
         preg_match('#\{(.*)\}(.*)#', $name, $preg);
-        return mb_convert_encoding($preg[2], "UTF-8", "UTF7-IMAP");
+        return imap_utf7_decode($preg[2]);
     }
 
     /**
